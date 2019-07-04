@@ -46,11 +46,18 @@ if (isset($_GET['page'])) {
   include 'page/pengiriman.php';
   }else if ($_GET['page']=='tambah-pengiriman') {
   include 'page/tambah-pengiriman.php';
-}else if ($_GET['page']=='transaksi') {
+  }else if ($_GET['page']=='det-pengiriman') {
+  include 'page/det-pengiriman.php';
+  }else if ($_GET['page']=='del-pengiriman') {
+  include 'page/del-pengiriman.php';
+  }else if ($_GET['page']=='transaksi') {
   include 'page/transaksi.php';
   }else if ($_GET['page']=='tambah-transaksi') {
   include 'page/tambah-transaksi.php';
-
+  }else if ($_GET['page']=='det-transaksi') {
+  include 'page/det-transaksi.php';
+  }else if ($_GET['page']=='del-transaksi') {
+    include 'page/del-transaksi.php';
   }
 }else{
   

@@ -51,6 +51,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo BASEURL."?page=pengiriman" ?>"><i class="fa fa-circle-o"></i> Pengiriman</a></li>
+            <li class="active"><a href="<?php echo BASEURL."?page=transaksi" ?>"><i class="fa fa-circle-o"></i> Penjualan</a></li>
          
            
           </ul>

@@ -15,6 +15,7 @@
                 <thead>
                 <tr>
                   <th>Supplier</th>
+                  <th>Pegawai</th>
                   <th>Tanggal</th>
                   
                   <th>AKSI</th>
@@ -22,22 +23,27 @@
                 </tr>
                 </thead>
                 <tbody>
+                  <?php 
+                    $q="SELECT ID_PENGIRIMAN,a.TANGGAL,NM_SUP,NM_PEG FROM pengiriman a
+INNER JOIN data_suplayer b on a.ID_SUP = b.ID_SUP
+INNER JOIN data_pegawai c on a.ID_PEG = c.ID_PEG";
+                   ?>
                 <tr>
-                  <td>Adit</td>
-                  <td>27 maret 2017                  </td>
-                  <td> <a href="#">Edit</a> | <a href="#">Hapus</a></td>
-                  
+                    <?php $result2=mysqli_query($link,$q);
+                      while ($data2 = mysqli_fetch_array($result2)) {
+                        extract($data2);
+                        // var_dump($data2);
+                         # code...?>
+                  <td><?php echo $NM_SUP?></td>
+                  <td><?php echo $NM_PEG?></td>
+                  <td><?php echo $TANGGAL ?>             </td>
+                  <td> <a href="?page=det-pengiriman&id=<?php echo $ID_PENGIRIMAN ?>">Edit</a> | <a href="?page=del-pengiriman&id=<?php echo $ID_PENGIRIMAN ?>">Hapus</a></td>
                   
                 </tr>
+                  <?php } ?>
                 
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>Rendering engine</th>
-                  <th>Browser</th>
-                  
-                </tr>
-                </tfoot>
+                
               </table>
             </div>
             <!-- /.box-body -->
